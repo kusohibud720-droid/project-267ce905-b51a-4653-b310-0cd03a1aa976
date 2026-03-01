@@ -9,7 +9,7 @@ const HeroSection = () => {
         <img
           src={heroImage}
           alt="Ведущий мероприятий"
-          className="w-full h-full object-cover object-[75%_center]"
+          className="w-full h-full object-cover object-[75%_20%]"
           loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/50 to-transparent" />
