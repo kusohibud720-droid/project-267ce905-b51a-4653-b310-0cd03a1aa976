@@ -15,7 +15,7 @@ const AboutSection = () => {
             <img
               src={aboutPhoto}
               alt="Ведущий"
-              className="rounded-2xl shadow-2xl w-full aspect-[4/5] object-cover"
+              className="rounded-2xl shadow-2xl w-full aspect-[4/5] object-cover object-right"
               loading="lazy"
             />
           </motion.div>
