@@ -15,7 +15,7 @@ const AboutSection = () => {
             <img
               src={aboutPhoto}
               alt="Ведущий"
-              className="rounded-2xl shadow-2xl w-full aspect-[4/5] object-cover object-[right_top]"
+              className="rounded-2xl shadow-2xl w-full aspect-[4/5] object-cover object-[center_top]"
               loading="lazy"
             />
           </motion.div>
@@ -34,7 +34,7 @@ const AboutSection = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed text-lg">
               <p>
-                Привет! Меня зовут Александр, и я — профессиональный ведущий мероприятий.
+                Привет! Меня зовут Игорь, и я — профессиональный ведущий мероприятий.
                 За годы работы я провёл более 500 мероприятий разного формата.
               </p>
               <p>
