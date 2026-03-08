@@ -26,7 +26,7 @@ const points = [
 const HowWeWorkSection = () => {
   return (
     <section className="py-24 bg-background">
-      <div className="container max-w-3xl">
+      <div className="container max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -38,24 +38,40 @@ const HowWeWorkSection = () => {
           </h2>
         </motion.div>
 
-        <div className="space-y-6">
-          {points.map((point, i) => (
-            <motion.div
-              key={point.num}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="flex items-start gap-5"
-            >
-              <span className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
-                {point.num}
-              </span>
-              <p className="text-lg text-muted-foreground leading-relaxed pt-1.5">
-                {point.text}
-              </p>
-            </motion.div>
-          ))}
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6">
+            {points.map((point, i) => (
+              <motion.div
+                key={point.num}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="flex items-start gap-5"
+              >
+                <span className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
+                  {point.num}
+                </span>
+                <p className="text-lg text-muted-foreground leading-relaxed pt-1.5">
+                  {point.text}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="flex justify-center"
+          >
+            <img
+              src="https://imshowman.ru/public/images/preview.php?src=gallery/15.jpg&h=300"
+              alt="Ведущий на мероприятии"
+              className="rounded-2xl shadow-2xl max-h-[400px] object-cover"
+              loading="lazy"
+            />
+          </motion.div>
         </div>
       </div>
     </section>

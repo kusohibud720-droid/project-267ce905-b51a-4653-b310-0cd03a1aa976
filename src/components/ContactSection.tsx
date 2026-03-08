@@ -114,27 +114,16 @@ const ContactSection = () => {
 
             <div className="space-y-4">
               <a
-                href="tel:+79001234567"
+                href="tel:+79670013272"
                 className="flex items-center gap-4 text-foreground hover:text-primary transition-colors group"
               >
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <Phone size={20} className="text-primary" />
                 </div>
-                <span className="text-lg">+7 (900) 123-45-67</span>
+                <span className="text-lg">+7 (967) 001-32-72</span>
               </a>
               <a
-                href="https://wa.me/79001234567"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 text-foreground hover:text-primary transition-colors group"
-              >
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <MessageCircle size={20} className="text-primary" />
-                </div>
-                <span className="text-lg">WhatsApp</span>
-              </a>
-              <a
-                href="https://t.me/username"
+                href="https://t.me/imshowman"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 text-foreground hover:text-primary transition-colors group"

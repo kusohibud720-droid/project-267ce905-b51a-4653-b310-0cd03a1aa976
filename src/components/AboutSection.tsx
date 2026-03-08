@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import aboutPhoto from "@/assets/about-photo.png";
+import heroImage from "@/assets/hero-host.jpg";
 
 const AboutSection = () => {
   return (
@@ -11,11 +11,12 @@ const AboutSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="flex justify-center"
           >
             <img
-              src={aboutPhoto}
-              alt="Ведущий"
-              className="rounded-2xl shadow-2xl w-full aspect-[4/5] object-cover object-[center_top]"
+              src={heroImage}
+              alt="Игорь Моисеенко — ведущий"
+              className="rounded-2xl shadow-2xl w-full max-w-md aspect-[3/4] object-cover object-[center_top]"
               loading="lazy"
             />
           </motion.div>
@@ -53,7 +54,9 @@ const AboutSection = () => {
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <p className="text-3xl font-bold text-primary">{stat.num}</p>
-                  <p className="text-sm text-muted-foreground mt-1">{stat.label}</p>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    {stat.label}
+                  </p>
                 </div>
               ))}
             </div>
