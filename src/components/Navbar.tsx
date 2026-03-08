@@ -88,7 +88,7 @@ const Navbar = () => {
               ))}
               <a
                 href="#contact"
-                onClick={(e) => { handleClick(e, "#contact"); setOpen(false); }}
+                onClick={(e) => handleClick(e, "#contact", true)}
                 className="bg-primary text-primary-foreground px-5 py-3 rounded-lg text-center font-semibold"
               >
                 Оставить заявку

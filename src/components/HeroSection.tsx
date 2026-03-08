@@ -30,7 +30,7 @@ const HeroSection = () => {
           >
             Профессиональный ведущий
           </motion.p>
-          <h1 className="text-2xl sm:text-5xl md:text-7xl font-bold mb-3 md:mb-6 leading-tight">
+          <h1 className="text-[1.35rem] sm:text-5xl md:text-7xl font-bold mb-3 md:mb-6 leading-tight">
             Ваш праздник —{" "}
             <span className="text-primary">моя работа</span>
           </h1>
