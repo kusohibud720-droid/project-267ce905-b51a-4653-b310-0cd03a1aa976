@@ -12,6 +12,7 @@ export default {
         "2xl": "1400px",
       },
     },
+    extend: {
       screens: {
         xs: "375px",
       },
