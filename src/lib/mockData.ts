@@ -36,6 +36,24 @@ export interface ContactData {
   responseText: string;
 }
 
+export interface GalleryPhoto {
+  id: string;
+  src: string;
+  alt: string;
+}
+
+export interface VideoItem {
+  id: string;
+  title: string;
+  url: string;
+  platform: "rutube" | "youtube";
+}
+
+export interface FeaturedVideo {
+  url: string;
+  platform: "rutube" | "youtube";
+}
+
 const STORAGE_PREFIX = "admin_";
 
 function load<T>(key: string, fallback: T): T {
