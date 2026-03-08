@@ -38,8 +38,8 @@ const HowWeWorkSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div className="space-y-6">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-stretch">
+          <div className="space-y-4 flex flex-col justify-center">
             {points.map((point, i) => (
               <motion.div
                 key={point.num}
@@ -47,12 +47,12 @@ const HowWeWorkSection = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="flex items-start gap-5"
+                className="flex items-start gap-4"
               >
-                <span className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
+                <span className="flex-shrink-0 w-9 h-9 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-base">
                   {point.num}
                 </span>
-                <p className="text-lg text-muted-foreground leading-relaxed pt-1.5">
+                <p className="text-base text-muted-foreground leading-relaxed pt-1">
                   {point.text}
                 </p>
               </motion.div>
@@ -63,12 +63,12 @@ const HowWeWorkSection = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="flex justify-center"
+            className="flex items-stretch"
           >
             <img
               src="https://imshowman.ru/public/images/preview.php?src=gallery/15.jpg&h=300"
               alt="Ведущий на мероприятии"
-              className="rounded-2xl shadow-2xl max-h-[400px] object-cover"
+              className="rounded-2xl shadow-2xl w-full h-full object-cover"
               loading="lazy"
             />
           </motion.div>
