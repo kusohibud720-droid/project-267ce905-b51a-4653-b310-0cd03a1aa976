@@ -1,12 +1,9 @@
 import { motion } from "framer-motion";
-
-const videos = [
-  { id: "dQw4w9WgXcQ", title: "Свадьба" },
-  { id: "dQw4w9WgXcQ", title: "Корпоратив" },
-  { id: "dQw4w9WgXcQ", title: "Юбилей" },
-];
+import { getVideos } from "@/lib/mockData";
 
 const VideoGallerySection = () => {
+  const videos = getVideos();
+
   return (
     <section className="py-24 bg-secondary/30">
       <div className="container">
@@ -27,7 +24,7 @@ const VideoGallerySection = () => {
         <div className="space-y-8">
           {videos.map((video, i) => (
             <motion.div
-              key={i}
+              key={video.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -38,7 +35,7 @@ const VideoGallerySection = () => {
               </h3>
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl bg-foreground/5">
                 <iframe
-                  src={`https://www.youtube.com/embed/${video.id}`}
+                  src={video.url}
                   title={video.title}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen

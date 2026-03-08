@@ -36,6 +36,24 @@ export interface ContactData {
   responseText: string;
 }
 
+export interface GalleryPhoto {
+  id: string;
+  src: string;
+  alt: string;
+}
+
+export interface VideoItem {
+  id: string;
+  title: string;
+  url: string;
+  platform: "rutube" | "youtube";
+}
+
+export interface FeaturedVideo {
+  url: string;
+  platform: "rutube" | "youtube";
+}
+
 const STORAGE_PREFIX = "admin_";
 
 function load<T>(key: string, fallback: T): T {
@@ -94,6 +112,26 @@ const defaultContact: ContactData = {
   responseText: "Расскажите о вашем мероприятии, и я подготовлю индивидуальное предложение. Обычно отвечаю в течение 2 часов.",
 };
 
+const defaultGallery: GalleryPhoto[] = [
+  { id: "1", src: "/src/assets/hero-host.jpg", alt: "Свадьба" },
+  { id: "2", src: "/src/assets/hero-host.jpg", alt: "Корпоратив" },
+  { id: "3", src: "/src/assets/hero-host.jpg", alt: "Юбилей" },
+  { id: "4", src: "/src/assets/hero-host.jpg", alt: "Выпускной" },
+  { id: "5", src: "/src/assets/hero-host.jpg", alt: "Вечеринка" },
+  { id: "6", src: "/src/assets/hero-host.jpg", alt: "День рождения" },
+];
+
+const defaultVideos: VideoItem[] = [
+  { id: "1", title: "Свадьба", url: "https://www.youtube.com/embed/dQw4w9WgXcQ", platform: "youtube" },
+  { id: "2", title: "Корпоратив", url: "https://www.youtube.com/embed/dQw4w9WgXcQ", platform: "youtube" },
+  { id: "3", title: "Юбилей", url: "https://www.youtube.com/embed/dQw4w9WgXcQ", platform: "youtube" },
+];
+
+const defaultFeaturedVideo: FeaturedVideo = {
+  url: "https://rutube.ru/play/embed/738a2169e4b82fc5779f4ca3ba08a1f5",
+  platform: "rutube",
+};
+
 // CRUD helpers
 export const getServices = (): Service[] => load("services", defaultServices);
 export const saveServices = (data: Service[]) => save("services", data);
@@ -109,6 +147,15 @@ export const saveAbout = (data: AboutData) => save("about", data);
 
 export const getContact = (): ContactData => load("contact", defaultContact);
 export const saveContact = (data: ContactData) => save("contact", data);
+
+export const getGallery = (): GalleryPhoto[] => load("gallery", defaultGallery);
+export const saveGallery = (data: GalleryPhoto[]) => save("gallery", data);
+
+export const getVideos = (): VideoItem[] => load("videos", defaultVideos);
+export const saveVideos = (data: VideoItem[]) => save("videos", data);
+
+export const getFeaturedVideo = (): FeaturedVideo => load("featuredVideo", defaultFeaturedVideo);
+export const saveFeaturedVideo = (data: FeaturedVideo) => save("featuredVideo", data);
 
 // Auth (mock)
 const ADMIN_USER = "admin";

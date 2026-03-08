@@ -1,18 +1,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-import heroImage from "@/assets/hero-host.jpg";
-
-const photos = [
-  { src: heroImage, alt: "Свадьба" },
-  { src: heroImage, alt: "Корпоратив" },
-  { src: heroImage, alt: "Юбилей" },
-  { src: heroImage, alt: "Выпускной" },
-  { src: heroImage, alt: "Вечеринка" },
-  { src: heroImage, alt: "День рождения" },
-];
+import { getGallery } from "@/lib/mockData";
 
 const GallerySection = () => {
+  const photos = getGallery();
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
@@ -35,7 +27,7 @@ const GallerySection = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {photos.map((photo, i) => (
             <motion.div
-              key={i}
+              key={photo.id}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -48,13 +40,13 @@ const GallerySection = () => {
                 alt={photo.alt}
                 className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                 loading="lazy"
+                onError={(e) => { (e.target as HTMLImageElement).src = "/placeholder.svg"; }}
               />
             </motion.div>
           ))}
         </div>
       </div>
 
-      {/* Lightbox */}
       <AnimatePresence>
         {selected !== null && (
           <motion.div
