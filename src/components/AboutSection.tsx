@@ -30,7 +30,7 @@ const AboutSection = () => {
             <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-3">
               Обо мне
             </p>
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-foreground">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 md:mb-8 text-foreground">
               Более 10 лет создаю незабываемые праздники
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed text-lg">

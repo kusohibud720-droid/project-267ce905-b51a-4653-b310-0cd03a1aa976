@@ -8,7 +8,7 @@ const GallerySection = () => {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <section id="gallery" className="py-24 bg-background">
+    <section id="gallery" className="py-12 md:py-24 bg-background">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

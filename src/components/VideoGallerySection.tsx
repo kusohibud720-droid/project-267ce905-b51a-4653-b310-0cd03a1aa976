@@ -5,7 +5,7 @@ const VideoGallerySection = () => {
   const videos = getVideos();
 
   return (
-    <section className="py-24 bg-secondary/30">
+    <section className="py-12 md:py-24 bg-secondary/30">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

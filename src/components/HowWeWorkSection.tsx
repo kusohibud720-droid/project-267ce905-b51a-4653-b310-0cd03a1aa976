@@ -38,7 +38,7 @@ const HowWeWorkSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="space-y-6">
             {points.map((point, i) => (
               <motion.div
