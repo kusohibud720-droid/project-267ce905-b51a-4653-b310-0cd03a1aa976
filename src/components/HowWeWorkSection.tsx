@@ -25,7 +25,7 @@ const points = [
 
 const HowWeWorkSection = () => {
   return (
-    <section className="py-24 bg-background">
+    <section className="py-12 md:py-24 bg-background">
       <div className="container max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
