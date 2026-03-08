@@ -14,13 +14,18 @@ const links = [
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
-  const handleClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string, closeMobile = false) => {
     e.preventDefault();
-    const id = href.replace("#", "");
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+    if (closeMobile) {
+      setOpen(false);
     }
+    const id = href.replace("#", "");
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, closeMobile ? 300 : 0);
   }, []);
 
   return (
