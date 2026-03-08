@@ -75,7 +75,7 @@ const Navbar = () => {
                 <a
                   key={l.href}
                   href={l.href}
-                  onClick={() => setOpen(false)}
+                  onClick={(e) => { handleClick(e, l.href); setOpen(false); }}
                   className="text-foreground hover:text-primary transition-colors py-2"
                 >
                   {l.label}
@@ -83,7 +83,7 @@ const Navbar = () => {
               ))}
               <a
                 href="#contact"
-                onClick={() => setOpen(false)}
+                onClick={(e) => { handleClick(e, "#contact"); setOpen(false); }}
                 className="bg-primary text-primary-foreground px-5 py-3 rounded-lg text-center font-semibold"
               >
                 Оставить заявку
