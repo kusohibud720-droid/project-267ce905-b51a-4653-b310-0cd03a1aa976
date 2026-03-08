@@ -80,7 +80,7 @@ const Navbar = () => {
                 <a
                   key={l.href}
                   href={l.href}
-                  onClick={(e) => { handleClick(e, l.href); setOpen(false); }}
+                  onClick={(e) => handleClick(e, l.href, true)}
                   className="text-foreground hover:text-primary transition-colors py-2"
                 >
                   {l.label}
