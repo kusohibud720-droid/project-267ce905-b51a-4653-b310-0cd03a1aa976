@@ -14,13 +14,18 @@ const links = [
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
-  const handleClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string, closeMobile = false) => {
     e.preventDefault();
-    const id = href.replace("#", "");
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+    if (closeMobile) {
+      setOpen(false);
     }
+    const id = href.replace("#", "");
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, closeMobile ? 300 : 0);
   }, []);
 
   return (
@@ -75,7 +80,7 @@ const Navbar = () => {
                 <a
                   key={l.href}
                   href={l.href}
-                  onClick={(e) => { handleClick(e, l.href); setOpen(false); }}
+                  onClick={(e) => handleClick(e, l.href, true)}
                   className="text-foreground hover:text-primary transition-colors py-2"
                 >
                   {l.label}
@@ -83,7 +88,7 @@ const Navbar = () => {
               ))}
               <a
                 href="#contact"
-                onClick={(e) => { handleClick(e, "#contact"); setOpen(false); }}
+                onClick={(e) => handleClick(e, "#contact", true)}
                 className="bg-primary text-primary-foreground px-5 py-3 rounded-lg text-center font-semibold"
               >
                 Оставить заявку
